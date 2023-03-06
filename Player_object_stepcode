@@ -1,0 +1,43 @@
+//Keyboard movement
+
+move_right = keyboard_check(vk_right)
+move_left = keyboard_check(vk_left)
+move_up = keyboard_check(vk_up)
+move_down = keyboard_check(vk_down)
+
+//Movement calculation
+vx = ((move_right - move_left) * walkspeed);
+vy = ((move_down - move_up) * walkspeed);
+
+//Idle check
+if (vx == 0 && vy == 0){
+
+}
+
+//Moving check
+if (vx != 0 || vy != 0) {
+ x+= vx;
+ y+= vy;
+}
+
+
+//Change sprite for movement 
+if (vx > 0) {
+sprite_index = player_sprite_idle_side
+dir = 0;
+}
+
+if (vx < 0) {
+sprite_index = player_sprite_idle_side
+dir = 2;
+}
+
+if (vy > 0) {
+sprite_index = player_sprite_idle_down
+dir = 3;
+}
+
+if (vy < 0) {
+sprite_index = player_sprite_idle_down
+dir = 1;
+}
